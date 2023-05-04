@@ -16,9 +16,11 @@ public class UsuarioRol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long usuarioRolId;
 	
+	//UN USUARIO PUEDE TENER VARIOS ROLES
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Usuario usuario;
 	
+	//UN ROL PUEDE PERTENECER A VARIOS USUARIOS
 	@ManyToOne
 	private Rol rol;
 }
