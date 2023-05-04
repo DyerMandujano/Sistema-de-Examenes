@@ -12,8 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "usuarios")
+@Getter
+@Setter
 public class Usuario {
 
 	@Id

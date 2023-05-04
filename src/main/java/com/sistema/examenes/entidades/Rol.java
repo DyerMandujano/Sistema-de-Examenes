@@ -10,13 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name="roles")
+@Getter
+@Setter
 public class Rol {
 
 	@Id
 	private Long rolid;
-	private String nombre;
+	private String rolnombre;
 	
 	//la propiedad 'cascade = CascadeType.ALL' permite que si se realiza una modificacion o eliminación en esta entidad ROL, la tabla relacionada con está entidad 'Rol' tambien se verá afectada. 
 	//Por ejemplo, si se elimina un Rol, tambien se eliminará este rol a todos los usuarios relacionados.
