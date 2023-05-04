@@ -29,6 +29,7 @@ public class SistemaExamenesBackendApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
+		/*
 		//CREAMOS UNA INSTANCIA PARA CREAR UN NUEVO USUARIO
 		Usuario usuario = new Usuario();
 		//SETEAMOS TODOS LOS DATOS PARA ESTE USUARIO
@@ -61,7 +62,7 @@ public class SistemaExamenesBackendApplication implements CommandLineRunner {
 		//CREAMOS UNA VARIABLE 'usuarioGuardado' DE TIPO Usuario EN EL CUAL SE LE ESTÁ ASIGNANDO COMO VALORES EL objeto 'usuario' Y LA COLECCION 'usuarioRoles' 
 		Usuario usuarioGuardado = usuarioService.guardarUsuario(usuario, usuarioRoles);
 		System.out.println(usuarioGuardado.getUsername());
-		
+		*/
 	}
 
 }

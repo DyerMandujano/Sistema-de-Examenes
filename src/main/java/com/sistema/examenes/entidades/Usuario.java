@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +42,8 @@ public class Usuario {
 	//PARA QUE AL MOMENTO EN EL QUE SE DESEE LISTAR A UN USUARIO PUEDA DEVOLVERNOS TODOS SUS DATOS (LAS CUALES TAMBIEN ESTA RELACIONADO CON OTRAS ENTIDADES COMO PUEDEN SER SUS ROLES O EXAMENES) DE FORMA INMEDIATA
 	//En la propiedad 'mappedBy' le colocamos "usuario", el cual se encuentra en la entidad 'UsuarioRol', YA QUE ESTE SERÁ EL PROPIETARIO PARA QUE el atributo "usuario" en la clase "UsuarioRol" esté mapeado al campo "usuarioRoles" en la clase "Usuario".
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,mappedBy = "usuario")
+	//Utilizamos la anotación "@JsonIgnore" para que al momento de consumir la API, este atributo no sea Serializado en formato JSON YA QUE GENERA DATOS REPETITIVOS POR LA RELACIÓN DE TABLAS QUE TENEMOS CON EL 'UsuarioRol'
+	@JsonIgnore
 	//El 'Set<UsuarioRol>' es una coleccion de tipo Usuario Rol el cual va a almacenar todos los roles que tenga el usuario elegido.
 	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 	
